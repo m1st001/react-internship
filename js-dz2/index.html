@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Задача 1 из скоупа 2 ДЗ</h1>
+    <script>
+        // Implicit conversion to numbers -> 1 + 0
+        document.writeln(true + false);
+        document.write("<br>");
+
+        // If a number is divided by a string that represents a number JS will try to convert the string into a number
+        document.writeln(12 / "6");
+        document.write("<br>");
+
+        // "number" is a string, so 15 and 3 are also converted to strings
+        document.writeln("number" + 15 + 3);
+        document.write("<br>");
+
+        // 15 is a number -> 18 is a number -> "number" is a string, 18 converts to "18"
+        document.writeln(15 + 3 + "number");
+        document.write("<br>");
+
+        // [1] -> "1" -> 1 > null -> 0
+        document.writeln([1] > null);
+        document.write("<br>");
+
+        // Second + operator tries to convert "bar" to a number: "bar" -> NaN
+        document.writeln("foo" + + "bar");
+        document.write("<br>");
+
+        // 'true' string cannot be directly converted to boolean
+        document.writeln('true' == true);
+        document.write("<br>");
+
+        // false -> 0 != 'false' -> NaN
+        document.writeln(false == 'false');
+        document.write("<br>");
+
+        // null represents absence of object, empty string is still a valid string
+        document.writeln(null == '');
+        document.write("<br>");
+
+        // !! converts to boolean equivalent, for strings !!"non-empty string" --> true
+        document.writeln(!!"false" == !!"true");
+        document.write("<br>");
+
+        // ['x'] -> 'x'
+        document.writeln(['x'] == 'x');
+        document.write("<br>");
+
+        // [] -> "" + null -> "null" + 1 -> "1"
+        document.writeln([] + null + 1);
+        document.write("<br>");
+
+        // 0 || "0" -> false || true -> true
+        // 0 && {} -> {}
+        // {} shows up as [object Object] - default object serialisation
+        document.writeln(0 || "0" && {});
+        document.write("<br>");
+
+        // Arrays are reference types, so always false
+        document.writeln([1,2,3] == [1,2,3]);
+        document.write("<br>");
+
+        // null is defined as falsy in JS
+        document.writeln(!!null);
+        document.write("<br>");
+
+        // undefined is defined as falsy in JS
+        document.writeln(!!undefined);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 2 из скоупа 2 ДЗ</h1>
+    <script>
+        // while(i) is true until i becomes 0 -> 0 is defined as falsy, so while(0 -> false) -> loop breaks
+        let i = 0;
+
+        while (i) {
+            alert( i-- );
+        }
+    </script>
+
+    <h1>Задача 3 из скоупа 2 ДЗ</h1>
+    <script>
+        function getNumbersFromTo(from, to, separator) {
+            let result = "";
+            while (from <= to) {
+                result = result + String(from) + separator;
+                from++;
+            }
+            return result;
+        }
+
+        const message3 = getNumbersFromTo(40, 91, ' ');
+        document.write(message3);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 4 из скоупа 2 ДЗ</h1>
+    <script>
+        function getNumbersDivisibleBy4FromTo(from, to) {
+            let result = "";
+            while (from <= to) {
+                if (from % 4 == 0) {
+                    result = result + String(from) + ' ';
+                }
+
+                from++;
+            }
+            return result;
+        }
+
+        const message4 = getNumbersDivisibleBy4FromTo(11, 340);
+        document.write(message4);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 5 из скоупа 2 ДЗ</h1>
+    <script>
+        function getNumbersFromDownTo(from, to, separator) {
+            let result = "";
+            for (from; from >= to; from--) {
+                result = result + String(from) + separator;
+            }
+            return result;
+        }
+
+        const message5 = getNumbersFromDownTo(100, -5, ' ');
+        document.write(message5);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 6 из скоупа 2 ДЗ</h1>
+    <script>
+        function DrawAPyramid(height) {
+            let i = 0;
+            while(i <= height) {
+                let line = new Array(i);
+                line.fill('y', 0, i);
+                console.log(line);
+                i++;
+            }
+        }
+
+        DrawAPyramid(15);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 7 из скоупа 2 ДЗ</h1>
+    <script>
+        function getNumbersFromToUsingFor(from, to) {
+            let result = "";
+            for (from; from <= to; from++) {
+                result = result + String(from) + '<br>';
+            }
+
+            return result;
+        }
+
+        const message7 = getNumbersFromToUsingFor(0, 100);
+        document.write(message7);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 8 из скоупа 2 ДЗ</h1>
+    <script>
+        function getSumFromTo(from, to) {
+            let sum = 0;
+            for (from; from <= to; from++) {
+                sum += from;
+            }
+
+            return sum;
+        }
+
+        const result = getSumFromTo(1, 100);
+        document.write(result);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 9 из скоупа 2 ДЗ</h1>
+    <script>
+        function getOddNumbers(from, to) {
+            let result = "";
+            for (from; from <= to; from++) {
+                if (from % 2 == 1) {
+                    result = result + String(from) + ' ';
+                }
+
+            }
+
+            return result;
+        }
+
+        const message9 = getOddNumbers(1, 11);
+        document.write(message9);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 10 из скоупа 2 ДЗ</h1>
+    <script>
+        const message10 = getNumbersFromTo(-123, -118, '');
+        document.write(message10);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 11 из скоупа 2 ДЗ</h1>
+    <script>
+        function getNumbersWithSeparator(from, to, separator) {
+            let result = "" + separator;
+            for (from; from <= to; from++) {
+                result = result + String(from) + '-';
+            }
+
+            return result;
+        }
+
+        const message11 = getNumbersWithSeparator(1, 9, '-');
+        document.write(message11);
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 12 из скоупа 2 ДЗ</h1>
+    <script>
+        function compareNumbers(num1, num2) {
+            return num1 == num2 ? "всё хорошо <br>" : "числа не равны попробуй снова <br>";
+        }
+
+        document.write(compareNumbers(1, 2));
+        document.write(compareNumbers(1, 1));
+        document.write("<br>");
+    </script>
+
+    <h1>Задача 13 из скоупа 2 ДЗ</h1>
+    <script>
+        function compareNumbers(num1, num2) {
+            return num1 + num2 > 10 ? "всё хорошо <br>" : "Сумма не больше 10 <br>";
+        }
+
+        document.write(compareNumbers(1, 11));
+        document.write(compareNumbers(1, 1));
+        document.write("<br>");
+    </script>
+</body>
+</html>
