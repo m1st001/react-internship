@@ -101,7 +101,54 @@ test('customFilter movieList test', () => {
 
 const {customReduce} = require("./Task1");
 test('customReduce test', () => {
-    const array = [];
-    const result = [1,2];
-    expect(array.customReduce(array)).toEqual(result);
+    const array = [1,2,3];
+    const result = 6;
+    expect(array.customReduce((accumulator, currentValue) => accumulator + currentValue, 0)).toEqual(result);
+});
+
+test('customReduce test 2', () => {
+    const array = [1,2,3];
+    const result = 16;
+    expect(array.customReduce((accumulator, currentValue) => accumulator + currentValue, 10)).toEqual(result);
+});
+
+test('customReduce get highest value', () => {
+    const array = [2,3,1,4,5];
+    const result = 5;
+    expect(array.customReduce((highestValue, currentValue) => {
+        return highestValue > currentValue ? highestValue : currentValue;
+    })).toEqual(result);
+});
+
+const {getBoxarts} = require("./testData");
+test('customReduce get the biggest boxart', () => {
+    const array = getBoxarts();
+    const result = "http://cdn-0.nflximg.com/images/2891/Fracture425.jpg";
+
+    array.map(boxart => {
+        boxart.area = boxart.height * boxart.width;
+    });
+
+    const url = array.reduce((highestValue, currentValue) => {
+        return highestValue.area > currentValue.area ? highestValue.url : currentValue.url;
+    });
+
+    expect(url).toEqual(result);
+});
+
+const {getVideos} = require("./testData");
+test('customReduce reduce to object', () => {
+    const array = getVideos();
+    const result = {
+         "65432445": "The Chamber",
+         "675465": "Fracture",
+         "70111470": "Die Hard",
+         "654356453": "Bad Boys"
+    };
+    let obj = array.reduce((accumulator, currentValue) => {
+        accumulator[currentValue.id] = currentValue.title;
+        return accumulator;
+    }, {});
+
+    expect(obj).toEqual(result);
 });

@@ -21,8 +21,12 @@ Array.prototype.customFilter = function(callback, thisArg) {
 exports.customFilter = Array.prototype.customFilter;
 
 // Created customReduce instead of overwriting map reduce testability purposes
-Array.prototype.customReduce = function(projectionFunction) {
-    let result = [1,2];
+Array.prototype.customReduce = function(callback, initialValue) {
+    let result = initialValue;
+    this.forEach((element) => {
+        result = callback(result, element);
+    });
+
     return result;
 }
 exports.customReduce = Array.prototype.customReduce;

@@ -205,3 +205,73 @@ url: "http://cdn-0.nflximg.com/images/2891/Fracture300.jpg"
     return movieList;
 }
 exports.getMovieLists = getMovieLists;
+
+function getBoxarts() {
+    var boxarts = [{
+
+        width: 200,
+
+        height: 200,
+
+        url: "http://cdn-0.nflximg.com/images/2891/Fracture200.jpg"
+
+    }, {
+
+        width: 150,
+
+        height: 200,
+
+        url: "http://cdn-0.nflximg.com/images/2891/Fracture150.jpg"
+
+    }, {
+
+        width: 300,
+
+        height: 200,
+
+        url: "http://cdn-0.nflximg.com/images/2891/Fracture300.jpg"
+
+    }, {
+
+        width: 425,
+
+        height: 150,
+
+        url: "http://cdn-0.nflximg.com/images/2891/Fracture425.jpg"
+
+    }];
+
+    return boxarts;
+}
+exports.getBoxarts = getBoxarts;
+
+function getVideos() {
+    var videos = [{
+
+        "id": 65432445,
+
+        "title": "The Chamber"
+
+    }, {
+
+        "id": 675465,
+
+        "title": "Fracture"
+
+    }, {
+
+        "id": 70111470,
+
+        "title": "Die Hard"
+
+    }, {
+
+        "id": 654356453,
+
+        "title": "Bad Boys"
+
+    }];
+
+    return videos;
+}
+exports.getVideos = getVideos;
