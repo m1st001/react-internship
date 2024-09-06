@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var Robot = function (name) {
+            this.name = name;
+        }
+
+        function add (op1, op2) {
+            this.name = this.name || 'Human';
+            return this.name + " can count to " + (op1 + op2);
+        }
+
+        var voltron = new Robot("Voltron");
+
+        // Human can count to 1
+        document.write(add(0,1) + '<br>');
+
+        // Voltron can count to 3
+        document.write(add.call(voltron, 1, 2) + '<br>');
+
+        // Voltron can count to 50
+        document.write(add.apply(voltron, [20, 30]) + '<br>');
+
+        // Voltron can count to drinkingbeer
+        const boundAdd = add.bind(voltron, "drinking", "beer")
+        document.write(boundAdd());
+
+        function showName() {
+            console.log(this.name);
+        }
+
+        // Не уверен что корректно понял задачу
+        showName();
+        this.showName();
+        showName.call();
+        showName.apply();
+        const boundShowName = showName.bind();
+        boundShowName();
+    </script>
+</body>
+</html>
