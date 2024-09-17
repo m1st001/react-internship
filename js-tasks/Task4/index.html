@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function delay(duration){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                },duration);
+
+            });
+        }
+
+        function logHi(){
+            console.log('hi');
+        }
+
+        delay(2000).then(logHi);
+    </script>
+
+    <script>
+        new Promise(function(resolve, reject) {
+            // должно через 3 секунды передать дальше значение - 10
+            setTimeout(() => {
+                resolve(10);
+            },3000);
+        }).then((result) => {
+            // должно вывести в console значение полученное и передать дальше
+            // увеличенное на 2
+            console.log(result);
+            return result + 2;
+        }).then((result) => {
+            // должно вывести в console значение полученное и передать дальше
+            // увеличенное на 2 через 2 секунды
+            console.log(result);
+            return delay(2000).then(() => {
+                return result += 2;
+            });
+        }).then((result) => {
+            // должно вывести конечный результат
+            console.log(result);
+        });
+
+        function delay(duration) {
+            return new Promise(resolve => setTimeout(resolve, duration));
+        }
+    </script>
+
+    <script>
+        new Promise((resolve) => {
+            const duration = Math. floor(Math. random()*4) + 1;
+            setTimeout(() => {
+                if (duration > 2) {
+                    throw new Error('timeout exceeded 2 seconds');
+                }
+
+                resolve(duration);
+            }, duration * 1000);
+        }).then((result) => {
+            console.log(`success in ${result} second(s)`);
+        }).catch((error) => console.error(error));
+    </script>
+
+    <script>
+        const numberOfFunctions = Math.floor(Math. random()*11);
+
+        for (let i = 1; i <= numberOfFunctions; i++) {
+            logTimer(i);
+        }
+
+        function logTimer(functionNumber) {
+            const duration = Math.floor(Math. random()*11);
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log(`function N${functionNumber} completed in ${duration} seconds`);
+                    resolve();
+                },duration * 1000);
+            });
+        }
+    </script>
+</body>
+</html>
