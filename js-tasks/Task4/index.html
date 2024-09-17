@@ -66,14 +66,27 @@
     </script>
 
     <script>
-        const numberOfFunctions = Math.floor(Math. random()*11);
+        const numberOfFunctions = Math.floor(Math. random()*11) + 1;
+        let maxDuration = 0;
 
-        for (let i = 1; i <= numberOfFunctions; i++) {
-            logTimer(i);
-        }
+        new Promise((resolve) => {
+            for (let i = 1; i <= numberOfFunctions; i++) {
+                logTimer(i);
+            }
+
+            setTimeout(() => {
+                resolve();
+            },maxDuration * 1000);
+        }).then(() => {
+            console.log(`Congrats on all functions completion! maxDuration=${maxDuration}`);
+        });
 
         function logTimer(functionNumber) {
-            const duration = Math.floor(Math. random()*11);
+            const duration = Math.floor(Math. random()*11) + 1;
+            if (duration > maxDuration) {
+                maxDuration = duration;
+            }
+
             return new Promise((resolve) => {
                 setTimeout(() => {
                     console.log(`function N${functionNumber} completed in ${duration} seconds`);
