@@ -6,7 +6,7 @@ test('transliterates string from cyrillic to latin', () => {
 });
 
 const {sort2DArray} = require('./Task6');
-test('transliterates string from cyrillic to latin', () => {
+test('sorts 2D array by sub-array element count', () => {
     const array = [
         [1, 2, 3],
         [1, 2],
@@ -25,7 +25,7 @@ test('transliterates string from cyrillic to latin', () => {
 });
 
 const {transformObjectsArray} = require('./Task6');
-test('transliterates string from cyrillic to latin', () => {
+test('reformats an array of objects', () => {
     const array = [
         {
             country: 'country1',
