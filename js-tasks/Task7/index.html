@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Task7.js"></script>
+</head>
+<body>
+    <h1>Graph(y -> 1:1, x -> 20:1)</h1>
+    <canvas id="canvas"></canvas>
+    <script>Draw([
+      [1, 2], [2, 4], [3, 8], [4, 16], [5, 32]
+    ])</script>
+
+    <script>
+        const height = 5;
+        const width = 5;
+        let counter = 1;
+
+        const table = document.createElement("table");
+        const tbody = document.createElement("tbody");
+
+        for (let i = 0; i < height; i++) {
+            const row = document.createElement("tr");
+
+            for (let j = 0; j < width; j++) {
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(counter++);
+                cell.onclick = () => {cellOnClick(row)};
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+            tbody.appendChild(row);
+        }
+
+        table.appendChild(tbody);
+        document.body.appendChild(table);
+        table.setAttribute("border", "1");
+
+        function cellOnClick(row) {
+            row.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>
