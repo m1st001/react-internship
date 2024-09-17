@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const height = 3;
+        const width = 3;
+        let counter = 1;
+
+        const table = document.createElement("table");
+        const tbody = document.createElement("tbody");
+
+        for (let i = 0; i < height; i++) {
+            const row = document.createElement("tr");
+
+            for (let j = 0; j < width; j++) {
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(counter++);
+                cell.onclick = () => {cellOnClick(cell)};
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+            tbody.appendChild(row);
+        }
+
+        table.appendChild(tbody);
+        document.body.appendChild(table);
+        table.setAttribute("border", "1");
+
+        function cellOnClick(cell) {
+            const colors = ["yellow", "red", "blue", "black", "green", "brown"];
+            const randomIndex = Math.floor(Math. random()*colors.length) + 1;
+            cell.style.backgroundColor = colors[randomIndex - 1];
+        }
+    </script>
+</body>
+</html>
