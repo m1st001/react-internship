@@ -15,13 +15,7 @@ function translit(cyrillic) {
 exports.translit = translit
 
 function sort2DArray(array) {
-    array.sort((a, b) => {
-        if (a.length == b.length) {
-            return 0;
-        }
-
-        return a.length < b.length ? -1 : 1;
-    });
+    array.sort((a, b) => a.length - b.length);
 
     return array;
 }
