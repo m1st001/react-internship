@@ -37,7 +37,9 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm i
+        run: npm ci
+        with:
+          cache-dependency-path: counter/counter-app/package-lock.json
       - name: Build
         run: npm run build
       - name: Setup Pages
@@ -46,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
-          path: './dist'
+          path: './counter/counter-app/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
