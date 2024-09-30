@@ -37,9 +37,8 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
+        working-directory: ./counter/counter-app
         run: npm ci
-        with:
-          cache-dependency-path: counter/counter-app/package-lock.json
       - name: Build
         run: npm run build
       - name: Setup Pages
