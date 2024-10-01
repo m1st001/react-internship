@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import Counter from '../views/Counter/index.jsx';
+import Counter from '../views/Counter';
 
-class CounterContainer extends Component {
-    constructor(props) {
+class CounterContainer extends Component<{}, { count: number }> {
+    constructor(props: {}) {
         super(props);
-        this.state = {
-            count: 0
-        };
+        this.state = { count: 0 };
     }
 
     increment = () => {
