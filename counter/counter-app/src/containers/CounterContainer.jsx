@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Counter from '../views/Counter/index.jsx';
 
 class CounterContainer extends Component {
@@ -29,6 +30,13 @@ class CounterContainer extends Component {
             reset={this.reset}
         />;
     }
+}
+
+CounterContainer.propTypes = {
+    count: PropTypes.number.isRequired,
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired
 }
 
 export default CounterContainer;
