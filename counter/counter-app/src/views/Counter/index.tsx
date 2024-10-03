@@ -1,7 +1,14 @@
 import React from 'react';
-import {Box, Button, Container, H1} from "./styles.js";
+import {Box, Button, Container, H1} from "./styles";
 
-const Counter = ({ count, increment, decrement, reset }) => {
+interface CounterProps {
+    count: number;
+    increment: () => void;
+    decrement: () => void;
+    reset: () => void;
+}
+
+const Counter = ({ count , increment, decrement, reset } : CounterProps) => {
     return (
         <Container>
             <H1>{count}</H1>
