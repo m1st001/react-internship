@@ -2,6 +2,7 @@ import styled, {createGlobalStyle} from "styled-components";
 import MuiButton from "@mui/material/Button";
 import MuiContainer from "@mui/material/Container";
 import MuiBox from "@mui/material/Box";
+import MuiCard from "@mui/material/Card"
 
 export const Root = styled.div`
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -46,7 +47,7 @@ export const H1 = styled.h1`
 `;
 
 export const Container = styled(MuiContainer)`
-    align-content: center;
+    display: flex;
     justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
@@ -57,4 +58,10 @@ export const Box = styled(MuiBox)`
     justify-content: center;
     align-items: center;
     align-content: center;
+`;
+
+export const Card = styled(MuiCard)`
+    margin: 1em;
+    padding: 0.5em;
+    max-width: 400px;
 `;
