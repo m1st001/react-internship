@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Counter from '../views/Counter';
+import Counter from "../views/Counter";
 
 class CounterContainer extends Component<{}, { count: number }> {
     constructor(props: {}) {

@@ -50,7 +50,6 @@ export const Container = styled(MuiContainer)`
     display: flex;
     justify-content: center;
     max-width: 1000px;
-    margin: 0 auto;
 `;
 
 export const Box = styled(MuiBox)`
