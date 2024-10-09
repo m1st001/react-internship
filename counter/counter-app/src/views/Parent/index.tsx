@@ -4,30 +4,30 @@ import {Grid, ParentCard} from "./styles";
 import CounterContainer from "../../containers/CounterContainer";
 
 interface ParentProps {
-    count: number;
-    increment: () => void;
-    decrement: () => void;
-    reset: () => void;
+    counters: typeof CounterContainer[];
+    addCounter: () => void;
+    removeCounter: () => void;
+    resetCounters: () => void;
 }
 
-const Parent = ({ count , increment, decrement, reset } : ParentProps) => {
+const Parent = ({ counters , addCounter, removeCounter, resetCounters } : ParentProps) => {
     return (
         <>
         <Container>
             <ParentCard>
-                <H1>{count} {count == 1 ? "counter" : "counters"}</H1>
+                <H1>{counters.length} {counters.length == 1 ? "counter" : "counters"}</H1>
                 <Box>
-                    <Button onClick={increment}>Add counter</Button>
-                    <Button onClick={decrement}>Remove first counter</Button>
-                    <Button onClick={reset}>Reset</Button>
+                    <Button onClick={addCounter}>Add counter</Button>
+                    <Button onClick={removeCounter}>Remove first counter</Button>
+                    <Button onClick={resetCounters}>Reset</Button>
                 </Box>
             </ParentCard>
         </Container>
             <Container>
                 <Grid container>
-                    {[...Array(count)].map(( ) => (
+                    {counters.map(() => (
                         <Grid>
-                            <CounterContainer/>
+                            <CounterContainer parentCounter={counters.length}/>
                         </Grid>
                     ))}
                 </Grid>
