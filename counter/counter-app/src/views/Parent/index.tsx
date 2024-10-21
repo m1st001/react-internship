@@ -25,8 +25,8 @@ const Parent = ({ counters , addCounter, removeCounter, resetCounters } : Parent
         </Container>
             <Container>
                 <Grid container>
-                    {counters.map(() => (
-                        <Grid>
+                    {counters.map((_, index) => (
+                        <Grid key={index}>
                             <CounterContainer parentCounter={counters.length}/>
                         </Grid>
                     ))}

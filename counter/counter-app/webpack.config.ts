@@ -26,6 +26,9 @@ const config: webpack.Configuration = {
             template: './public/index.html',
         }),
     ],
+    devServer: {
+        historyApiFallback: true,
+    },
 };
 
 export default config;
