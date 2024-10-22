@@ -1,12 +1,12 @@
 import { GlobalStyle, Root } from "./views/Counter/styles";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage";
 import AboutPage from "./routes/AboutPage";
 import CountersPage from "./routes/CountersPage";
 import RootPage from "./routes/RootPage";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       errorElement: <ErrorPage />,
       children: [
@@ -28,9 +28,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Root>
-        <RouterProvider router={router} />
-      </Root>
+      <RouterProvider router={router} />
+      <Root></Root>
     </>
   );
 }

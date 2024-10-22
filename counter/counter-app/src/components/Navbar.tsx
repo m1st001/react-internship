@@ -8,7 +8,7 @@ const Navbar = () => {
       <Toolbar>
         <NavButton
           color="inherit"
-          href="/about"
+          href="#about"
           sx={{
             backgroundColor:
               location.pathname === "/about"
@@ -20,7 +20,7 @@ const Navbar = () => {
         </NavButton>
         <NavButton
           color="inherit"
-          href="/counters"
+          href="#counters"
           sx={{
             backgroundColor:
               location.pathname === "/counters"
