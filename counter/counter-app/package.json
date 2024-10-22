@@ -2,7 +2,7 @@
   "name": "counter-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://amodhakal.github.io/portfolio",
+  "homepage": "https://m1st001.github.io/react-internship",
   "scripts": {
     "dev": "webpack-dev-server --mode development --history-api-fallback",
     "build": "webpack --mode production",
