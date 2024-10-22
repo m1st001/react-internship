@@ -23,12 +23,20 @@ const LoginForm = () => {
             </Typography>
           </CardContent>
           <Box display="flex" flexDirection="column">
-            <TextField id="filled-basic" label="Email" variant="filled" />
+            <TextField
+              id="filled-basic"
+              label="Email"
+              variant="filled"
+              type="email"
+              required
+            />
             <TextField
               id="filled-basic"
               label="Password"
               variant="filled"
               type="password"
+              slotProps={{ htmlInput: { minLength: 6 } }}
+              required
             />
           </Box>
           <CardActions>
