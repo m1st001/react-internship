@@ -1,8 +1,11 @@
-import { useRouteError } from "react-router-dom";
 import ParentContainer from "../containers/ParentContainer";
+import Navbar from "../components/Navbar";
 
 export default function CountersPage() {
-    return (
-        <ParentContainer/>
-    );
+  return (
+    <div>
+      <Navbar />
+      <ParentContainer />
+    </div>
+  );
 }

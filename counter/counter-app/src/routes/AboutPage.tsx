@@ -1,8 +1,14 @@
+import { PageContent, PageHeader } from "./PageStyles";
+import Navbar from "../components/Navbar";
+
 export default function AboutPage() {
-    return (
-        <div id="about-page">
-            <h1>About us</h1>
-            <p>Le very cool company.</p>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar />
+      <PageHeader>About us</PageHeader>
+      <PageContent>
+        Le very cool company. Definitely worth buying from.
+      </PageContent>
+    </div>
+  );
 }
