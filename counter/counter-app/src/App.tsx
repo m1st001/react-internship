@@ -4,6 +4,7 @@ import ErrorPage from "./routes/ErrorPage";
 import AboutPage from "./routes/AboutPage";
 import CountersPage from "./routes/CountersPage";
 import RootPage from "./routes/RootPage";
+import LoginPage from "./routes/LoginPage";
 
 function App() {
   const router = createHashRouter([
@@ -21,6 +22,10 @@ function App() {
         {
           path: "counters",
           element: <CountersPage />,
+        },
+        {
+          path: "login",
+          element: <LoginPage />,
         },
       ],
     },

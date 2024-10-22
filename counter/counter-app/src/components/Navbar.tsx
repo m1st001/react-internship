@@ -30,6 +30,18 @@ const Navbar = () => {
         >
           Counters
         </NavButton>
+        <NavButton
+          color="inherit"
+          href="#login"
+          sx={{
+            backgroundColor:
+              location.pathname === "/login"
+                ? "rgba(255, 255, 255, 0.2)"
+                : "inherit",
+          }}
+        >
+          Login
+        </NavButton>
       </Toolbar>
     </AppBar>
   );
