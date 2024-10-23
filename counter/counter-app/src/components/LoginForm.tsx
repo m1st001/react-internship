@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -11,7 +11,23 @@ import {
 } from "@mui/material";
 
 const LoginForm = () => {
-  function handleSubmit() {}
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+
+    const formData = {
+      email: email,
+      password: password,
+    };
+
+    const jsonData = JSON.stringify(formData);
+
+    console.log(jsonData);
+
+    setEmail("");
+    setPassword("");
+  }
 
   return (
     <Container maxWidth="xs">
@@ -19,24 +35,26 @@ const LoginForm = () => {
         <form onSubmit={handleSubmit}>
           <CardContent>
             <Typography variant="h4" component="h1" textAlign="center" p="1">
-              Sign Up
+              Log in
             </Typography>
           </CardContent>
           <Box display="flex" flexDirection="column">
             <TextField
-              id="filled-basic"
+              id="email"
               label="Email"
               variant="filled"
               type="email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
-              id="filled-basic"
+              id="password"
               label="Password"
               variant="filled"
               type="password"
               slotProps={{ htmlInput: { minLength: 6 } }}
               required
+              onChange={(e) => setPassword(e.target.value)}
             />
           </Box>
           <CardActions>
