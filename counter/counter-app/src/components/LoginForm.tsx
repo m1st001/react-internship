@@ -10,10 +10,15 @@ import {
   Typography,
 } from "@mui/material";
 
-const LoginForm = () => {
+interface LoginFormProps {
+  onFormSubmit: (formData: { email: string; password: string }) => void;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ onFormSubmit }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  function handleSubmit(event: React.FormEvent) {
+
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     const formData = {
@@ -21,13 +26,11 @@ const LoginForm = () => {
       password: password,
     };
 
-    const jsonData = JSON.stringify(formData);
-
-    console.log(jsonData);
+    onFormSubmit(formData);
 
     setEmail("");
     setPassword("");
-  }
+  };
 
   return (
     <Container maxWidth="xs">
