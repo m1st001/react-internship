@@ -11,10 +11,14 @@ import {
 } from "@mui/material";
 
 interface LoginFormProps {
-  onFormSubmit: (formData: { email: string; password: string }) => void;
+  onFormSubmit?: (formData: { email: string; password: string }) => void;
+  onFormChange?: (formData: { email: string; password: string }) => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onFormSubmit }) => {
+const LoginForm: React.FC<LoginFormProps> = ({
+  onFormSubmit,
+  onFormChange,
+}) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -26,16 +30,31 @@ const LoginForm: React.FC<LoginFormProps> = ({ onFormSubmit }) => {
       password: password,
     };
 
-    onFormSubmit(formData);
+    if (onFormSubmit) {
+      onFormSubmit(formData);
+    }
 
     setEmail("");
     setPassword("");
   };
 
+  const handleChange = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const formData = {
+      email: email,
+      password: password,
+    };
+
+    if (onFormChange) {
+      onFormChange(formData);
+    }
+  };
+
   return (
     <Container maxWidth="xs">
       <Card>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onChange={handleChange}>
           <CardContent>
             <Typography variant="h4" component="h1" textAlign="center" p="1">
               Log in
