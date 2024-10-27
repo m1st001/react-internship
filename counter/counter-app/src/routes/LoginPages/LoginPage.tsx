@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import LoginForm from "../components/LoginForm";
+import Navbar from "../../components/Navbar";
+import LoginForm from "../../components/LoginForm";
 import { Box } from "@mui/material";
 
 export default function LoginPage() {

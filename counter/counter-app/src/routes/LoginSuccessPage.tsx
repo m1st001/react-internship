@@ -2,7 +2,7 @@ import { PageContent, PageHeader } from "./PageStyles";
 import { Card, Container } from "@mui/material";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
-import { RootState } from "./ReduxLoginPage";
+import { RootState } from "./LoginPages/ReduxLoginPage";
 
 interface loginInfo {
   provider: string;

@@ -4,8 +4,8 @@ import ErrorPage from "./routes/ErrorPage";
 import AboutPage from "./routes/AboutPage";
 import CountersPage from "./routes/CountersPage";
 import RootPage from "./routes/RootPage";
-import LoginPage from "./routes/LoginPage";
-import ReduxLoginPage from "./routes/ReduxLoginPage";
+import LoginPage from "./routes/LoginPages/LoginPage";
+import ReduxLoginPage from "./routes/LoginPages/ReduxLoginPage";
 import LoginSuccessPage from "./routes/LoginSuccessPage";
 
 function App() {
@@ -34,7 +34,11 @@ function App() {
           element: <ReduxLoginPage />,
         },
         {
-          path: "loginviaredux#success",
+          path: "loginSuccess",
+          element: <LoginSuccessPage />,
+        },
+        {
+          path: "loginviaformik",
           element: <LoginSuccessPage />,
         },
       ],

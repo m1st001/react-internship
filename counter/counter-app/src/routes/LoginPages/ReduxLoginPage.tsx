@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
-import LoginForm from "../components/LoginForm";
+import Navbar from "../../components/Navbar";
+import LoginForm from "../../components/LoginForm";
 import { Box } from "@mui/material";
-import { PageContent } from "./PageStyles";
+import { PageContent } from "../PageStyles";
 import { useSelector } from "react-redux";
-import store from "../store/store";
-import { updateForm } from "../store/FormSlice";
+import store from "../../store/store";
+import { updateForm } from "../../store/FormSlice";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -17,7 +17,7 @@ export default function ReduxLoginPage() {
 
   const handleFormSubmit = () => {
     const navigate = {
-      pathname: "/#loginviaredux#success",
+      pathname: "/#loginSuccess",
     };
     window.location.assign(navigate.pathname);
   };
