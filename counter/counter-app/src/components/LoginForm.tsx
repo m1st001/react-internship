@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -24,37 +24,31 @@ const LoginForm: React.FC<LoginFormProps> = ({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-
     const formData = {
       email: email,
       password: password,
     };
-
     if (onFormSubmit) {
       onFormSubmit(formData);
     }
-
     setEmail("");
     setPassword("");
   };
 
-  const handleChange = (event: React.FormEvent) => {
-    event.preventDefault();
-
+  useEffect(() => {
     const formData = {
       email: email,
       password: password,
     };
-
     if (onFormChange) {
       onFormChange(formData);
     }
-  };
+  }, [email, password, onFormChange]);
 
   return (
     <Container maxWidth="xs">
       <Card>
-        <form onSubmit={handleSubmit} onChange={handleChange}>
+        <form onSubmit={handleSubmit}>
           <CardContent>
             <Typography variant="h4" component="h1" textAlign="center" p="1">
               Log in
@@ -67,6 +61,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               variant="filled"
               type="email"
               required
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
@@ -74,8 +69,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
               label="Password"
               variant="filled"
               type="password"
-              slotProps={{ htmlInput: { minLength: 6 } }}
               required
+              slotProps={{ htmlInput: { minLength: 6 } }}
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Box>
