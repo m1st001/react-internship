@@ -5,21 +5,20 @@ import { PageContent } from "../PageStyles";
 import { useSelector } from "react-redux";
 import store from "../../store/store";
 import { updateForm } from "../../store/FormSlice";
+import { useNavigate } from "react-router-dom";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 export default function ReduxLoginPage() {
   const formData = useSelector((state: RootState) => state.form);
+  const navigate = useNavigate();
 
   const handleFormChange = (formData: { email: string; password: string }) => {
     store.dispatch(updateForm(formData));
   };
 
   const handleFormSubmit = () => {
-    const navigate = {
-      pathname: "/#loginSuccess",
-    };
-    window.location.assign(navigate.pathname);
+    navigate("/loginviaredux/success");
   };
 
   return (

@@ -34,7 +34,7 @@ function App() {
           element: <ReduxLoginPage />,
         },
         {
-          path: "loginSuccess",
+          path: "loginviaredux/success",
           element: <LoginSuccessPage />,
         },
         {
