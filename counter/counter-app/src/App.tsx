@@ -6,6 +6,7 @@ import CountersPage from "./routes/CountersPage";
 import RootPage from "./routes/RootPage";
 import LoginPage from "./routes/LoginPage";
 import ReduxLoginPage from "./routes/ReduxLoginPage";
+import LoginSuccessPage from "./routes/LoginSuccessPage";
 
 function App() {
   const router = createHashRouter([
@@ -31,6 +32,10 @@ function App() {
         {
           path: "loginviaredux",
           element: <ReduxLoginPage />,
+        },
+        {
+          path: "loginviaredux/success",
+          element: <LoginSuccessPage />,
         },
       ],
     },
