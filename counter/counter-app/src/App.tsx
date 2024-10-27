@@ -7,6 +7,7 @@ import RootPage from "./routes/RootPage";
 import LoginPage from "./routes/LoginPages/LoginPage";
 import ReduxLoginPage from "./routes/LoginPages/ReduxLoginPage";
 import LoginSuccessPage from "./routes/LoginSuccessPage";
+import FormikLoginPage from "./routes/LoginPages/FormikLoginPage";
 
 function App() {
   const router = createHashRouter([
@@ -39,6 +40,10 @@ function App() {
         },
         {
           path: "loginviaformik",
+          element: <FormikLoginPage />,
+        },
+        {
+          path: "loginviaformik/success",
           element: <LoginSuccessPage />,
         },
       ],

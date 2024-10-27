@@ -21,8 +21,10 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        {tabs.map((tab) => (
+        {tabs.map((tab, index) => (
           <NavButton
+            key={index}
+            variant="text"
             color="inherit"
             href={tab.route}
             sx={{

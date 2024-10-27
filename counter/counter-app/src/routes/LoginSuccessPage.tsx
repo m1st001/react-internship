@@ -3,11 +3,35 @@ import { Card, Container } from "@mui/material";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./LoginPages/ReduxLoginPage";
+import { useLocation } from "react-router-dom";
 
 interface loginInfo {
   provider: string;
   email: string;
   password: string;
+}
+
+function getFormikLoginInfo() {
+  const location = useLocation();
+
+  if (!location.state) {
+    return {
+      provider: "not provided",
+      email: "",
+      password: "",
+    };
+  }
+
+  const { email, password } = location.state as {
+    email: string;
+    password: string;
+  };
+
+  return {
+    provider: "Formik",
+    email: email,
+    password: password,
+  };
 }
 
 function getReduxLoginInfo() {
@@ -23,6 +47,13 @@ export default function LoginSuccessPage() {
   const loginInfos: loginInfo[] = [];
 
   loginInfos.push(getReduxLoginInfo());
+  loginInfos.push(getFormikLoginInfo());
+
+  loginInfos.forEach((loginInfo) => {
+    if (loginInfo.provider === "not provided") {
+      loginInfos.splice(loginInfos.indexOf(loginInfo), 1);
+    }
+  });
 
   return (
     <div>
