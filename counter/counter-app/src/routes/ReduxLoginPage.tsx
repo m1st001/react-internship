@@ -17,7 +17,7 @@ export default function ReduxLoginPage() {
 
   const handleFormSubmit = () => {
     const navigate = {
-      pathname: "/#loginviaredux/success",
+      pathname: "/#loginviaredux#success",
     };
     window.location.assign(navigate.pathname);
   };
