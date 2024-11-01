@@ -9,6 +9,7 @@ import ReduxLoginPage from "./routes/LoginPages/ReduxLoginPage";
 import LoginSuccessPage from "./routes/LoginSuccessPage";
 import FormikLoginPage from "./routes/LoginPages/FormikLoginPage";
 import ActivityPage from "./routes/ActivityPage";
+import MstLoginPage from "./routes/LoginPages/MstLoginPage";
 
 function App() {
   const router = createHashRouter([
@@ -50,6 +51,10 @@ function App() {
         {
           path: "getactivity",
           element: <ActivityPage />,
+        },
+        {
+          path: "loginviamst",
+          element: <MstLoginPage />,
         },
       ],
     },

@@ -20,10 +20,9 @@ const ActivityPage = () => {
   return (
     <>
       <Navbar />
-      {loading && <PageContent>Loading...</PageContent>}{" "}
-      {error && <p>Error: {error}</p>}{" "}
+      {loading && <PageContent>Loading...</PageContent>}
+      {error && <p>Error: {error}</p>}
       <Container>
-        {" "}
         {continents.length ? (
           continents.map((activity, index) => (
             <Container>

@@ -14,7 +14,7 @@ const tabs: Tab[] = [
   { name: "Login via Redux", route: "#loginviaredux" },
   { name: "Login via Formik", route: "#loginviaformik" },
   { name: "Get activity Saga", route: "#getactivity" },
-  { name: "Login via MST", route: "#loginviaredux" },
+  { name: "Login via MST", route: "#loginviamst" },
 ];
 
 const Navbar = () => {
