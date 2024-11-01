@@ -13,7 +13,7 @@ const tabs: Tab[] = [
   { name: "Login", route: "#login" },
   { name: "Login via Redux", route: "#loginviaredux" },
   { name: "Login via Formik", route: "#loginviaformik" },
-  { name: "Get activity Saga", route: "#loginviaredux" },
+  { name: "Get activity Saga", route: "#getactivity" },
   { name: "Login via MST", route: "#loginviaredux" },
 ];
 

@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import { PageContent } from "../PageStyles";
 import { useSelector } from "react-redux";
 import store from "../../store/store";
-import { updateForm } from "../../store/FormSlice";
+import { updateForm } from "../../store/formSlice";
 import { useNavigate } from "react-router-dom";
 
 export type RootState = ReturnType<typeof store.getState>;
