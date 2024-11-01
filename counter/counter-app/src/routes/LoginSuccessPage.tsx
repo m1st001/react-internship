@@ -1,4 +1,4 @@
-import { PageContent, PageHeader } from "./PageStyles";
+import { PageContent, PageHeader } from "../styles/pageStyles";
 import { Card, Container } from "@mui/material";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";

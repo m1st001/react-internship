@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import LoginForm from "../../components/LoginForm";
 import { Box } from "@mui/material";
-import { PageContent } from "../PageStyles";
+import { PageContent } from "../../styles/pageStyles";
 import { useSelector } from "react-redux";
 import store from "../../store/store";
 import { updateForm } from "../../store/formSlice";

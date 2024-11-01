@@ -1,4 +1,4 @@
-import { PageContent, PageHeader } from "./PageStyles";
+import { PageContent, PageHeader } from "../styles/pageStyles";
 import Navbar from "../components/Navbar";
 
 export default function AboutPage() {

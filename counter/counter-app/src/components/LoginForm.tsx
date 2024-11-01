@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
   Container,
-  TextField,
   Typography,
 } from "@mui/material";
+import { Button } from "../styles/globalStyles";
+import { EmailInput, InputBox, PasswordInput } from "../styles/loginFormStyles";
 
 interface LoginFormProps {
   onFormSubmit?: (formData: { email: string; password: string }) => void;
@@ -54,27 +54,18 @@ const LoginForm: React.FC<LoginFormProps> = ({
               Log in
             </Typography>
           </CardContent>
-          <Box display="flex" flexDirection="column">
-            <TextField
-              id="email"
-              label="Email"
-              variant="filled"
-              type="email"
+          <InputBox>
+            <EmailInput
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <TextField
-              id="password"
-              label="Password"
-              variant="filled"
-              type="password"
+            <PasswordInput
               required
-              slotProps={{ htmlInput: { minLength: 6 } }}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          </Box>
+          </InputBox>
           <CardActions>
             <Box sx={{ margin: "0 auto" }}>
               <Button type="submit">Login</Button>

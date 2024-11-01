@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import { Formik, FormikProps } from "formik";
 import FormikForm, { FormValues } from "../../components/FormikForm";
 import { Box } from "@mui/material";
-import { PageContent } from "../PageStyles";
+import { PageContent } from "../../styles/pageStyles";
 import { useNavigate } from "react-router-dom";
 
 const FormikLoginPage = () => {

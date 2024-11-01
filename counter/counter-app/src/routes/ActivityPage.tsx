@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import { fetchActivityStart } from "../store/activitySlice";
 import { AppDispatch, RootState } from "../store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Container } from "../views/Counter/styles";
-import { PageContent } from "./PageStyles";
+import { PageContent } from "../styles/pageStyles";
+import { Button, Container } from "../styles/globalStyles";
 
 const ActivityPage = () => {
   const dispatch: AppDispatch = useDispatch();

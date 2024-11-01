@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  TextField,
   Button,
   Box,
   Card,
@@ -10,6 +9,7 @@ import {
   Container,
 } from "@mui/material";
 import { Form, FormikProps } from "formik";
+import { EmailInput, InputBox, PasswordInput } from "../styles/loginFormStyles";
 
 export interface FormValues {
   email: string;
@@ -28,34 +28,24 @@ const FormikForm: React.FC<FormikProps<FormValues>> = ({
         <Form>
           <CardContent>
             <Typography variant="h4" component="h1" textAlign="center" p="1">
-              Formik log in
+              Log in
             </Typography>
           </CardContent>
-          <Box display="flex" flexDirection="column">
-            <TextField
-              id="email"
-              label="Email"
-              variant="filled"
-              type="email"
-              name="email"
+          <InputBox>
+            <EmailInput
               required
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <TextField
-              id="password"
-              label="Password"
-              variant="filled"
-              type="password"
-              name="password"
+            <PasswordInput
               required
               slotProps={{ htmlInput: { minLength: 6 } }}
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
             />
-          </Box>
+          </InputBox>
           <CardActions>
             <Box sx={{ margin: "0 auto" }}>
               <Button type="submit" disabled={isSubmitting}>

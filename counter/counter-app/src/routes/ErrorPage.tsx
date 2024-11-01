@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import { PageContent, PageHeader } from "./PageStyles";
+import { PageContent, PageHeader } from "../styles/pageStyles";
 
 export default function ErrorPage() {
   const error = useRouteError();

@@ -1,4 +1,3 @@
-import { GlobalStyle, Root } from "./views/Counter/styles";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage";
 import AboutPage from "./routes/AboutPage";
@@ -10,6 +9,7 @@ import LoginSuccessPage from "./routes/LoginSuccessPage";
 import FormikLoginPage from "./routes/LoginPages/FormikLoginPage";
 import ActivityPage from "./routes/ActivityPage";
 import MstLoginPage from "./routes/LoginPages/MstLoginPage";
+import { GlobalStyle, Root } from "./styles/globalStyles";
 
 function App() {
   const router = createHashRouter([
@@ -55,6 +55,10 @@ function App() {
         {
           path: "loginviamst",
           element: <MstLoginPage />,
+        },
+        {
+          path: "loginviamst/success",
+          element: <LoginSuccessPage />,
         },
       ],
     },

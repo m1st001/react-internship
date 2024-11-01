@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar } from "@mui/material";
-import { NavButton } from "../routes/PageStyles";
+import { NavButton } from "../styles/pageStyles";
 
 interface Tab {
   name: string;

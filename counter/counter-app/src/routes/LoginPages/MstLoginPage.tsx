@@ -4,13 +4,13 @@ import { observer } from "mobx-react-lite";
 import React from "react";
 import LoginForm from "../../components/LoginForm";
 import Navbar from "../../components/Navbar";
-import { PageContent } from "../PageStyles";
+import { PageContent } from "../../styles/pageStyles";
 import { useNavigate } from "react-router-dom";
 
 const MstLoginPage: React.FC = observer(() => {
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/loginviaredux/success");
+    navigate("/loginviamst/success");
   };
 
   const handleChange = (formData: { email: string; password: string }) => {
